@@ -11,6 +11,7 @@ return {
           "node_modules",
         },
         matcher = {
+          frecency = true,
           fuzzy = true,
           smartcase = true,
           ignorecase = true,
