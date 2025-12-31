@@ -1,6 +1,17 @@
 return {
   {
     "folke/snacks.nvim",
+    keys = {
+      {
+        "<M-b>",
+        function()
+          Snacks.picker.git_branches({
+            layout = "select",
+          })
+        end,
+        desc = "Branches",
+      },
+    },
     opts = {
       notifier = {},
       image = {},
