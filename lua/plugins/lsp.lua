@@ -21,16 +21,6 @@ return {
     },
   },
   {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-cmdline",
-    },
-  },
-
-  {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
@@ -50,6 +40,30 @@ return {
             },
           },
         },
+      },
+    },
+  },
+  {
+    "L3MON4D3/LuaSnip",
+    lazy = false,
+    config = function()
+      require("luasnip.loaders.from_vscode").lazy_load({
+        paths = {
+          vim.fn.stdpath("config") .. "/snippets",
+        },
+      })
+    end,
+    opts = {
+      history = true,
+      delete_check_events = "TextChanged",
+    },
+  },
+  {
+    "saghen/blink.cmp",
+    optional = true,
+    opts = {
+      snippets = {
+        preset = "luasnip",
       },
     },
   },
